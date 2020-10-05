@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<script type="module">
+    import  {LitElement,html} from'https://unpkg.com/lit-element/lit-element.js?module';
+    var t;
+    var on=false;
+    class stopuhr extends LitElement {
+        static get properties(){
+            return{
+                watch:{type:String},
+                time:{type:Number,reflect:true}
+            };
+        }
+        constructor(){
+            super();
+            this.time=0;
+            this.watch='00:00:00';
+        }
+        render(){
+            //new date(00000).toLocaleTimeString
+            return html`
+            <style>
+                *{
+                    text-align: center;
+                    font-size: 25px;
+                }
+            </style>
+            <H1>Stopuhr mit einen Knopf fuer weiter</H1>
+            <p>Die Aktuelle Zeit ist: ${this.watch}</p>
+            <button @click="${this.start}">Start</button>
+            <button @click="${this.stop}">Stop</button>
+            <button @click="${this.weiter}">Weiter</button>
+            `;
+        }
+        start(){
+            if(this.time != 0){
+                this.time=0;
+                this.weiter();
+            }else{
+                this.weiter();
+            }
+        }
+        stop(){
+            on=false;
+            clearInterval(t);
+        }
+        weiter(){
+            if(!on) {
+                t = setInterval(() => {
+                    ++this.time;
+                    this.watch = new Date(0, 0, 0, 0, 0, this.time).toLocaleTimeString();
+                    on=true;
+                }, 1000);
+            }
+        }
+    }
+    customElements.define('stop-uhr',stopuhr);
+</script>
+<stop-uhr></stop-uhr>

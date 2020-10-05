@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Einkaufsliste</title>
+</head>
+<body>
+<h1>Einkaufsliste</h1>
+<label>Enter a new Item: </label>
+<input id="inputListe" type="text" >
+<button id="myBtn">Add Item</button>
+<ul id="list"></ul>
+</body>
+<script>
+  //man setzt einen listener
+    document.getElementById("myBtn").addEventListener("click",addItems);
+    //markiert die liste und inputfeld fürs spätere ansprechen
+    const ul= document.getElementById("list");
+    const input = document.getElementById("inputListe");
+    //die funktion zum fügen
+    function addItems() {
+
+        var listItem = document.createElement("li");
+        //hier wird das input und der button in der liste reingeschrieben
+        listItem.innerHTML = `${input.value} <button>Delete</button>`;
+        //in der liste von buttom wählt man einen button aus
+        const deleteButton = listItem.querySelector("button");
+        //ein listener fürs löschen wird hier gesetzt
+        deleteButton.addEventListener("click", function(){ul.removeChild(listItem)});
+        ul.appendChild(listItem);
+        input.value = "";
+        input.focus();
+        /*
+        var node = document.createElement("li");
+        node.appendChild(document.createTextNode(inputN));
+        var n = document.createElement("button");
+        n.appendChild(document.createTextNode("Delete"));
+        node.appendChild(n);
+        ul.appendChild(node);
+        addButtonListener();
+    }
+    function addButtonListener() {
+        const liste = document.getElementsByTagName("button");
+        var i;
+        for(i=0; i<liste.length; i++){
+            liste[i].addEventListener("click",deleteItem(liste[i]));
+        }
+    }
+    function deleteItem(elem) {
+        const d= elem.parentNode;
+        d.removeChild(elem.previousSibling);
+        //elem.style.visibility ="hidden";
+        //d.removeChild(d.firstChild);
+        //d.removeChild(d.lastChild);
+
+         */
+    }
+</script>
+</html>

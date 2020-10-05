@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ABDIS HOMEPAGE</title>
+</head>
+<style>
+  body{
+      background-color: #b3d4fc;
+    text-align: center;
+    font-family: "Cooper Black";
+    font-size: 25px;
+  }
+  div{
+    border: #cb798d 3px solid;
+  }
+</style>
+<body>
+  <div>
+    <h1>Willkommen zu Abdis Seite</h1>
+  </div>
+  <div>
+    <p>Wollen Sie zu den super geheimen WWW-Navigator?</p>
+    <p>PS: Man kann selber was reinschreiben ;)</p>
+    <p>wenn ich Sie überzeigt habe, dann drücken Sie bitte <a href="WWWNavigator.php">hier</a>. </p>
+  </div>
+  <div>
+    <p>Endlich konntest du dich Anmelden</p>
+    <p>Hier drücken um alle Logdaten anzusehen</p>
+    <button type="button" onclick="anmeldeDaten()">HIER BITTE</button>
+  </div>
+  <div id="data">
+
+  </div>
+</body>
+<script>
+  async function anmeldeDaten() {
+    let data = await fetch('./data.csv');
+    let dataText = await data.text();
+    console.log(data);
+    console.log(dataText);
+    const update=document.getElementById("data");
+    let x = document.createElement("p");
+    x.innerHTML =dataText;
+    update.appendChild(x);
+  }
+</script>
+</html>

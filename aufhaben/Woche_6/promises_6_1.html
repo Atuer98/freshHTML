@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>laden Zwei Datein</title>
+</head>
+
+<body>
+<h1>Aufgabe 1</h1>
+<h5>Hier versuchen wir mit der hilfe von Promises zwei Text-datein gleichzeitig zu laden</h5>
+<button onclick="load2docs()">Fetch</button>
+<p id="p"></p>
+</body>
+</html>
+<script>
+  function load2docs() {
+      Promise.all([
+          fetch('.././../datein/A.txt').then(resp => resp.text()),
+          fetch('.././../datein/B.txt').then(resp => resp.text())
+      ])
+          .then(function ([a,b]) {
+              const paragraph = document.getElementById("p");
+
+              var aZerteilt = a.split("\r\n");
+              var bZerteilt =b.split("\r\n");
+              var i ;
+              for(i=0; i<aZerteilt.length;i++){
+                  paragraph.innerHTML+= aZerteilt[i] +" " + bZerteilt[i] + "<br>";
+              }
+
+          })
+  }
+</script>

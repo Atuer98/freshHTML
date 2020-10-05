@@ -1,0 +1,43 @@
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+* {
+  text-align: center;
+  font-family: Algerian;
+}
+
+.header {
+  background-color: red;
+  flex:100%
+
+}
+.left-side {
+  background-color: green;
+  flex:20%
+}
+.main {
+  background-color: blue;
+  flex:60%
+}
+.right-side {
+  background-color: mediumpurple;
+  flex:20%
+}
+@media screen and (max-width: 785px) {
+  .left-side{
+    flex:30;
+  }
+  .main{
+    flex:70;
+  }
+  .right-side{
+    flex:100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .flex-container {
+    flex-flow: column wrap;
+  }
+}

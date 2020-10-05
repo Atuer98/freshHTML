@@ -1,0 +1,50 @@
+<!DOCTYPE Html>
+<script type="module" >
+    import {LitElement,html,css} from 'https://unpkg.com/lit-element/lit-element.js?module';
+    class clickcolor extends LitElement{
+        static get properties (){
+            return{
+                max:{type:Number, reflect:true},
+                counter:{type:Number, reflect:true},
+                color1:{type:String}
+            };
+        }
+        //beim constr bekommt er werte
+        constructor(){
+            super();
+            this.max=5;
+            this.counter=0;
+            this.color1='black';
+        }
+        render(){
+            return html`
+            <style>
+                *{
+                    text-align: center;
+                    font-size: 25px;
+                }
+                p{
+                    color:${this.color1};
+                }
+            </style>
+            <h1>Hier ist ein Zaehler der vielleich rot leuchtet ;)</h1>
+            <p>${this.counter}</p>
+            <button @click="${this.clickupdate}">clickupdate</button>
+            `;
+        }
+        clickupdate(){
+            ++this.counter;
+            if(this.counter=== this.max){
+                this.color1="red";
+                setTimeout(()=>{
+                    this.color1='black';
+                },5000);
+            }
+
+
+        }
+
+    }
+    customElements.define('click-color',clickcolor);
+</script>
+<click-color></click-color>

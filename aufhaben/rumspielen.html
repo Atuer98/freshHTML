@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta charset="UTF-8">
+  <title>Rumspielen mit code</title>
+</header>
+<style>
+  *{
+    text-align: center;
+    font-family: "Cooper Black";
+  }
+  label {
+    border: #b3d4fc 2px solid;
+    padding: 2px;
+    background-color: mediumpurple;
+  }
+</style>
+<body>
+  <h1>Hallo das ist die Seite</h1>
+  <div id="main">
+    <p>The DOM is very useful.</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+  </div>
+  <input type="text" id="inputT" placeholder="right something">
+  <label id="labelT" onclick="document.getElementById('inputT').style.backgroundColor='red'" >Click Me</label>
+  <label id="labelT2" onclick="changeColor()" >Click Me</label>
+  <p id="demo">hier ist nix</p>
+</body>
+<script>
+const pDemo = document.getElementById("demo");
+pDemo.innerHTML += "  aber jetzt ist was passiert";
+document.querySelector("h1").innerText ="Hallo das ist jetzt eine andere Seite";
+const divMain= document.getElementById("main");
+const p1= divMain.getElementsByTagName("p");
+p1.item(1).innerHTML += "so you should understand it";
+p1.item(0).innerHTML += " and now i can say, i understand it!!";
+p1.item(2).innerHTML+="lets see what happens"; //bringt nichts wenn man ausserhalb des array ist.
+function changeColor() {
+  const labelT2 = document.getElementById("labelT2").innerHTML="do NOT click me";
+}
+</script>
+</html>

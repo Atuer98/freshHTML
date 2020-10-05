@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+</head>
+<body>
+<div id="menuTest">
+  <flexmenu>  </flexmenu>
+  <br>
+  <flexmenu hor="true"></flexmenu>
+</div>
+</body>
+</html>
+
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    Vue.component('flexmenu', {
+        template:  '<div v-if=hor><button v-for="button in buttons" @click="doIt(button.title)">{{button.title}}</button></div>' +
+            '<div v-else style="display:flex;flex-direction: column"><button v-for="button in buttons" @click="doIt(button.title)">{{button.title}}</button></div>',
+
+        props: ['hor'],
+        data: function () {
+            return {
+                buttons: [
+                    {id: 1, title:"Home"},
+                    {id:2, title: "Merch"},
+                    {id:3,title: "New Music"},
+                    {id:4, title:"Contact Us"},
+                ],
+            }
+
+        },
+        methods:{
+            doIt: function (arg) {
+                console.log(arg);
+            }
+        }
+    });
+    new Vue({
+        el: '#menuTest'
+    });
+</script>

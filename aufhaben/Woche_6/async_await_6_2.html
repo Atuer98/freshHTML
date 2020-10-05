@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async await </title>
+</head>
+<body>
+<h1>Aufgabe 2</h1>
+<h5>Hier versuchen wir mit der hilfe von async/await zwei Text-datein gleichzeitig zu laden</h5>
+<button onclick="load2docs()">Fetch</button>
+<p id="p"></p>
+</body>
+</html>
+<script>
+  async function load2docs() {
+      let a = await fetch('.././../datein/A.txt');
+      let aText = await a.text();
+      let b = await fetch('.././../datein/B.txt');
+      let bText = await  b.text();
+
+      var aZerkleinert = aText.split("\r\n");
+      var bZerkleinert = bText.split('\r\n');
+
+      var paragraph = document.getElementById("p");
+      var i;
+      for (i=0; i<aZerkleinert.length;i++){
+          paragraph.innerHTML += aZerkleinert[i] + " " + bZerkleinert[i] + "<br>";
+      }
+  }
+</script>

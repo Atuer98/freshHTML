@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="../../css/wireframe_2_4.css" >
+</head>
+<body>
+<div id="container">
+  <h1>Survey Form</h1>
+  <div id="inner-container">
+    <div id="top-con">
+      <p>let us know how we can improve freeCodeCamp</p>
+    </div>
+    <div class="bottom-con">
+      <table>
+        <tr>
+          <td class="left-con">* Name:</td>
+          <td class="right-con"><input type="text" id="name" placeholder="Enter your name"> </td>
+        </tr>
+        <tr>
+          <td class="left-con">* Email:</td>
+          <td class="right-con"><input type="text" id="email" placeholder="Enter your Email" ></td>
+        </tr>
+        <tr>
+          <td class="left-con">* Age:</td>
+          <td class="right-con"><input type="number" min="0" > </td>
+        </tr>
+        <tr>
+          <td class="left-con"><label>Which option best describes your current role?</label></td>
+          <td class="right-con">
+            <select  name="roles" size="1" >
+            <option>Student</option>
+            <option>Schüler</option>
+            <option>Arbeiter</option>
+          </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="left-con"><label>* How likely is that you would recommend freeCodeCamp to a friend?</label></td>
+          <td class="right-con"><br><br>
+            <input id="def" type="radio" name="recommend"  >
+            <label for="def">Definitly</label><br>
+            <input id="maybe" type="radio" name="recommend" >
+            <label for="maybe">Maybe</label><br>
+            <input id="notsure" type="radio" name="recommend"  >
+            <label for="notsure">Not sure</label><br>
+          </td>
+        </tr>
+        <tr>
+          <td class="left-con"><label>What do you like most in FCC:</label></td>
+          <td class="right-con"><select name="likeness" size="1" placeholder="Select an option">
+            <option value="" disabled selected hidden>Select an option</option>
+            <option>One</option>
+            <option>Two</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="left-con"><label>Things that should be improved in the future (check all that apply):</label></td>
+          <td class="right-con">
+            <br><br>
+            <input name="improved" id="frontend" type="checkbox" >
+            <label for="frontend">Front-end Prjects</label><br>
+            <input name="improved" id="backend" type="checkbox" >
+            <label for="backend">Back-end Prjects</label><br>
+            <input name="improved" id="datavis" type="checkbox" >
+            <label for="datavis">Data Visualization</label><br>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

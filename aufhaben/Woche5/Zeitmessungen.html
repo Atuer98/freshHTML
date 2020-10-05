@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeitmessungen</title>
+</head>
+<style>
+  *{
+    text-align: center;
+    font-family: Broadway;
+    background-color: #b3d4fc;
+  }
+  table{
+    padding: 3px;
+    margin: 2px;
+    border: black 2px solid;
+  }
+</style>
+<body>
+<h1>was ist das schnellste??</h1>
+<table>
+  <tr>
+    <td>InnerHTML</td>
+    <td>OUTERHTML</td>
+    <td>INNERTEXT</td>
+    <td>TEXTCONTENT</td>
+    </tr>
+  <tr>
+    <td id="t1"><button onclick="innerHtml()">start</button></td>
+    <td id="t2"><button onclick="outerHtml()">start</button></td>
+    <td id="t3"><button onclick="innertext()">start</button></td>
+    <td id="t4"><button onclick="textcontent()">start</button></td>
+  </tr>
+</table>
+
+</body>
+<script>
+    function innerHtml() {
+      var td1 = document.getElementById("t1");
+      var time1 = performance.now();
+      td1.innerHTML= "Take your nose off my keyboard\n" +
+          "What you bothering me for?\n" +
+          "There's a room full of niggas\n" +
+          "What you following me for?\n" +
+          "This ain't no fucking sing-along\n" +
+          "So, girl, what you singing for?\n" +
+          "It's 'cause we blowing like a C4\n" +
+          "Got my whole crew blowing like a C4\n" +
+          "20, keep the bar rolling\n" +
+          "Fake ID's in the trash, we going\n" +
+          "Straight to the top, rooftop glows\n" +
+          "With a hand full of girls and they all so foreign\n" +
+          "Brain so poisoned, rainbows flowin'\n" +
+          "Light-skinned chick, first flight from Poland\n" +
+          "A whole lotta friends, first flight from Poland\n" +
+          "A whole lotta cash coming straight from Poland\n" ;
+      var time2 = performance.now();
+      var time = time2-time1;
+      td1.innerHTML += "time: " + time;
+  }
+    function outerHtml() {
+        var td1 = document.getElementById("t2");
+        var time1 = performance.now();
+        td1.outerHTML= "Take your nose off my keyboard\n" +
+            "What you bothering me for?\n" +
+            "There's a room full of niggas\n" +
+            "What you following me for?\n" +
+            "This ain't no fucking sing-along\n" +
+            "So, girl, what you singing for?\n" +
+            "It's 'cause we blowing like a C4\n" +
+            "Got my whole crew blowing like a C4\n" +
+            "20, keep the bar rolling\n" +
+            "Fake ID's in the trash, we going\n" +
+            "Straight to the top, rooftop glows\n" +
+            "With a hand full of girls and they all so foreign\n" +
+            "Brain so poisoned, rainbows flowin'\n" +
+            "Light-skinned chick, first flight from Poland\n" +
+            "A whole lotta friends, first flight from Poland\n" +
+            "A whole lotta cash coming straight from Poland\n" ;
+        var time2 = performance.now();
+        var time = time2-time1;
+        td1.outerHTML += "time: " + time;
+    }
+    function innertext() {
+        var td1 = document.getElementById("t3");
+        var time1 = performance.now();
+        td1.innerText= "Take your nose off my keyboard\n" +
+            "What you bothering me for?\n" +
+            "There's a room full of niggas\n" +
+            "What you following me for?\n" +
+            "This ain't no fucking sing-along\n" +
+            "So, girl, what you singing for?\n" +
+            "It's 'cause we blowing like a C4\n" +
+            "Got my whole crew blowing like a C4\n" +
+            "20, keep the bar rolling\n" +
+            "Fake ID's in the trash, we going\n" +
+            "Straight to the top, rooftop glows\n" +
+            "With a hand full of girls and they all so foreign\n" +
+            "Brain so poisoned, rainbows flowin'\n" +
+            "Light-skinned chick, first flight from Poland\n" +
+            "A whole lotta friends, first flight from Poland\n" +
+            "A whole lotta cash coming straight from Poland\n" ;
+        var time2 = performance.now();
+        var time = time2-time1;
+        td1.innerHTML += "time: " + time;
+    }
+    function textcontent() {
+        var td1 = document.getElementById("t4");
+        var time1 = performance.now();
+        td1.textContent= "Take your nose off my keyboard\n" +
+            "What you bothering me for?\n" +
+            "There's a room full of niggas\n" +
+            "What you following me for?\n" +
+            "This ain't no fucking sing-along\n" +
+            "So, girl, what you singing for?\n" +
+            "It's 'cause we blowing like a C4\n" +
+            "Got my whole crew blowing like a C4\n" +
+            "20, keep the bar rolling\n" +
+            "Fake ID's in the trash, we going\n" +
+            "Straight to the top, rooftop glows\n" ;
+        var time2 = performance.now();
+        var time = time2-time1;
+        td1.innerHTML += "time: " + time;
+    }
+</script>
+</html>

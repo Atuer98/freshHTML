@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flexible Menue</title>
+</head>
+
+<Body>
+<flexible-menu displaying="horizontal">
+  <button>Home</button>
+  <button>About Us</button>
+  <button>Merch</button>
+</flexible-menu>
+
+<flexible-menu displaying="vertical">
+  <button>Home</button>
+  <button>About Us</button>
+  <button>Merch</button>
+</flexible-menu>
+
+</Body>
+<script type="module">
+    import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module';
+
+    class CustomMenu extends LitElement {
+
+        static get properties() {
+            return {
+                displaying: { type: String }
+            };
+        }
+
+        static get styles() {
+            return css`
+                .horizontal {
+                    display: flex;
+                    flex-direction: row;
+                }
+                .vertical {
+                    display: flex;
+                    flex-direction: column;
+                }
+            `;
+
+        }
+
+        constructor() {
+            super();
+            this.displaying = "horizontal";
+        }
+
+        render() {
+            return html`
+                    <p>this is a ${this.displaying} way of displaying the menue</p>
+                    <div class="${this.displaying}">
+                        <slot></slot>
+                    </div>
+                `;
+        }
+
+    }
+
+    customElements.define('flexible-menu', CustomMenu);
+</script>

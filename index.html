@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AbdiLand</title>
+</head>
+<style>
+  body{
+    background-color:#e4c1f9 ;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Cooper Black";
+  }
+  .grid-container {
+    display: grid;
+    grid-gap: 2px;
+    padding: 10px;
+  }
+  .header {
+    grid-area: 1/1;
+    background-color:#a9def9;
+    border: black 5px solid;
+  }
+  .left{
+    grid-area: 2/1;
+    background-color: #a9def9;
+  }
+  .main{
+    grid-area:3/1 ;
+    background-color: #a9def9;
+  }
+  li {
+
+  }
+  @media screen and (min-width: 600px) {
+    .header {
+      grid-area: 1/1/2/6;
+    }
+    .left {
+      grid-area: 2/1/3/3;
+    }
+    .main {
+      grid-area: 2/3/3/6;
+    }
+
+  }
+  @media screen and (min-width: 785px) {
+    .header {
+      grid-row: 1;
+      grid-column: 1/ span 4;
+    }
+    .left {
+      grid-row: 2/span 8;
+      grid-column: 1/ span 1;
+    }
+    .main {
+      grid-row: 2/span 8;
+      grid-column: 2/ span 3;
+    }
+    .übung{
+      display: flex;
+      border: #cb798d 3px solid ;
+      padding: 2px;
+      margin: 2px;
+    }
+
+  }
+</style>
+<body>
+<div class="grid-container">
+  <div class="header">
+    <h1>Abdallah Tuer representiert:</h1>
+    <h2>Die Hausarbeit</h2>
+  </div>
+
+  <div  class="left">
+    <h3>Was wurde nicht geschafft?</h3>
+    <p>8.3 Bezier-Animation</p>
+    <p>9.2 State Management</p>
+    <p>10.3 Vue.Js WWW-Navigator</p>
+    <p>11.3 MEVN WWW-Navigator</p>
+    <p>13.1 React Tutorial</p>
+  </div>
+  <div  class="main">
+    <h4>Die Aufgaben:</h4>
+    <div class="übung" >
+      <p>2 HTML & CSS</p>
+      <ul>
+        <li><a href="./aufhaben/woche%202/wireframe_2_3.html">2.3 HTML Wireframe</a></li>
+        <li><a href="aufhaben/woche%202/wireframe_2_4.html">2.4 Survy Form</a></li>
+      </ul>
+    </div>
+    <div class="übung" >
+      <p>3 Responsive Web Design</p>
+      <ul>
+        <li><a href="aufhaben/Woche%203/RWD%20flexbox%20DesktopF.html">3.1 RWD Flexbpox Desktop first</a> </li>
+        <li><a href="aufhaben/Woche%203/flex%20mobile%20fitst.html">3.2 RWD Flexbpox Mobile first</a></li>
+        <li><a href="aufhaben/Woche%203/flex%20mobile%20fitst.html">3.3 RWD Grid Desktop first</a></li>
+        <li><a href="aufhaben/Woche%203/flex%20mobile%20fitst.html">3.4 RWD Grid Mobile first</a></li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>4 JavaScript</p>
+      <ul>
+        <li><a href="aufhaben/Woche%204/JavaScript%201.js">4.1 Funktionen in JavaScript</a> </li>
+        <li><a href="aufhaben/Woche%204/aufgabe_zwei.js">4.2 JavaScript Objecte</a></li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>5 Document Object Model DOM</p>
+      <ul>
+        <li><a href="aufhaben/Woche5/Einkaufsliste.html">5.1 Einkaufsliste</a> </li>
+        <li><a href="aufhaben/Woche5/RedenerZeit.html">5.2 Redenerliste</a></li>
+        <li><a href="aufhaben/Woche5/Zeitmessungen.html">5.3 Performancemessung</a> </li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>6 Async JavaScript</p>
+      <ul>
+        <li><a href="aufhaben/Woche_6/promises_6_1.html">6.1 Promises</a></li>
+        <li><a href="aufhaben/Woche_6/async_await_6_2.html">6.2 Async / Await</a> </li>
+        <li><a href="aufhaben/Woche_6/navigator.html">6.3 WWW-Navigator</a></li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>7 Modulares Web</p>
+      <ul>
+        <li><a href="aufhaben/Woche_7/counterMitStart_7_1.html">7.1 Counter mit Start und Limit</a> </li>
+        <li><a href="aufhaben/Woche_7/stopUhr_7_2.html">7.2 Stoppuhr</a> </li>
+        <li><a href="aufhaben/Woche_7/flexibleMenue_7_3.html">7.3 Flexible Menü-Komponente</a> </li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>8 Scalable Vector Graphics SVG</p>
+      <ul>
+        <li><a href="aufhaben/Woche_8/svgDiagramm_8_1.html">8.1 SVG-Diagramm</a> </li>
+        <li><a href="aufhaben/Woche_8/Diagramm_8_2.html">8.2 Statistik-Balkendiagramm in SVG</a> </li>
+        <li>8.3 Bezier-Animation</li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>9 WevApps</p>
+      <ul>
+        <li><a href="aufhaben/Woche_9/routhing_wwNavigtor_9_1.html">9.1 Routing</a></li>
+        <li>9.2 State Management</li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>10 VueJs</p>
+      <ul>
+        <li><a href="aufhaben/Woche_10/vueZaehler_10_1.html">10.1 Counter in Vue.js</a> </li>
+        <li><a href="aufhaben/Woche_10/menue_10_2.html">10.2 Menü-Komponente</a></li>
+        <li>10.3 Vue.js WWW-Navigator</li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>11 MEVN</p>
+      <ul>
+        <li>11.1 Erweiterung der MEVN App</li>
+        <li>11.2 MEVN WWW Navigator</li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>12 PHP</p>
+      <ul>
+        <li><a href="aufhaben/Woche_12/registrierung_script.php">12.1 Registrierung mit PHP</a> </li>
+        <li><a href="aufhaben/Woche_12/anmelde_Script.php">12.2 Login mit PHP</a> </li>
+        <li><a href="aufhaben/Woche_12/WWWNavigator.php"> 12.3 WWW-Navigator mit PHP</a></li>
+      </ul>
+    </div>
+    <div class="übung">
+      <p>13 React</p>
+      <ul>
+        <li>13.0 React Tutorial</li>
+      </ul>
+    </div><div class="übung">
+    <p>14 Web App Security</p>
+    <ul>
+      <li><a href="aufhaben/Woche_14/webappXSS.php" >14.1 XSS</a></li>
+      <li><a href="aufhaben/Woche_14/ProtectedArray_14_2.js">14.2 Protected Array</a> </li>
+    </ul>
+  </div>
+  </div>
+</div>
+<footer></footer>
+</body>
+</html>
